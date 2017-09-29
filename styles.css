@@ -6,3 +6,8 @@
     font-size: 2em;
 
 }
+.square{
+    height: 5em;
+    width: 5em;
+    background-color: black;
+}
