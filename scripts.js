@@ -36,43 +36,49 @@
     * You can use that to give them a uniform appearance using CSS
     * You can also use that to find out how many squares are on the screen (think DOM function)*/
 
-    //1. create an 'add square'  button
-        //create a button
-        //create a container for button
-        //make button say 'Add square'
-        //put button and container on page
-    document.addEventListener("DOMContentLoaded", function(){
-        var SquareButton= document.createElement('button');
-        SquareButton.innerText="Add Square";
-        SquareButton.id="square-button"
-        var SquareButtonContainer= document.createElement('div');
-        SquareButtonContainer.appendChild(SquareButton);
-        document.body.appendChild(SquareButtonContainer);
-        SquareButton=document.getElementById("square-button");
-        SquareButton.addEventListener("click", function(){
-            var NewButton=document.createElement('button');
-            NewButton.className="new-button";
-            var NewSquare=document.createElement('div');
-            NewSquare.className="squares";
-            NewButton.appendChild(NewSquare);
-            document.body.appendChild(NewButton);
-        })
-    })
+//1. create an 'add square'  button
+//create a button
+//create a container for button
+//make button say 'Add square'
+//put button and container on page
+//2.make 'add square' button create a clickable div w/ black background 
+// add event listener "click" to button
+//create a button
+//create a div
+//give the div the class 'squares'
+// style the div to be a uniform square 
+//have a black background
+//align on the page horizontally 
+//wrap to next line when runs out of space
+//put div inside button
+//put button on page
+//3. make the div have an id of its postiion on the page
+//get the elemenets in class "square"
+//make id of div = "squares" length
+var squareCounter = 1;
+document.addEventListener("DOMContentLoaded", function () {
+    var SquareButton = document.createElement('button');
+    SquareButton.innerText = "Add Square";
+    SquareButton.id = "square-button"
+    var SquareButtonContainer = document.createElement('div');
+    SquareButtonContainer.appendChild(SquareButton);
+    document.body.appendChild(SquareButtonContainer);
+    SquareButton = document.getElementById("square-button");
+    SquareButton.addEventListener("click", function () {
+        squareCounter++;
+        var NewSquare = document.createElement('div');
+        NewSquare.className = "squares";
+        squareNumber = document.createElement("h3");
+        squareNumber.innerText = squareCounter;
+        document.body.appendChild(NewSquare);
+        NewSquare.id = squareCounter;
+        NewSquare.appendChild(squareNumber);
 
-    //2.make 'add square' button create a clickable div w/ black background 
-        // add event listener "click" to button
-        //create a button
-        //create a div
-        //give the div the class 'squares'
-        // style the div to be a uniform square 
-            //have a black background
-            //align on the page horizontally 
-            //wrap to next line when runs out of space
-        //put div inside button
-        //put button on page
-    //3. make the div have an id of its postiion on the page
-        //get the elemenets in class "square"
-        //make id of div = "squares" length
+    })
+})
+
+
+
     //4. Make div have a number eqaul to its postion on page only displayed when hovered over
         // addEventLister for hover(does that exist?)no mouseover
         // create p
@@ -82,11 +88,10 @@
             //style in css
         //add event listener (mouse out)
         // remove the p
-        
-    
+
+
  //5. make the squares change colors when clicked
        //create a style in css the same as original div except for random color change
        //add event listener click
        // change class of div to new colored div
 //6. make the even squares delete the square in
-    
