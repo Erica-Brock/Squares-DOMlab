@@ -55,30 +55,6 @@
 //3. make the div have an id of its postiion on the page
 //get the elemenets in class "square"
 //make id of div = "squares" length
-var squareCounter = 1;
-document.addEventListener("DOMContentLoaded", function () {
-    var SquareButton = document.createElement('button');
-    SquareButton.innerText = "Add Square";
-    SquareButton.id = "square-button"
-    var SquareButtonContainer = document.createElement('div');
-    SquareButtonContainer.appendChild(SquareButton);
-    document.body.appendChild(SquareButtonContainer);
-    SquareButton = document.getElementById("square-button");
-    SquareButton.addEventListener("click", function () {
-        squareCounter++;
-        var NewSquare = document.createElement('div');
-        NewSquare.className = "squares";
-        squareNumber = document.createElement("h3");
-        squareNumber.innerText = squareCounter;
-        document.body.appendChild(NewSquare);
-        NewSquare.id = squareCounter;
-        NewSquare.appendChild(squareNumber);
-
-    })
-})
-
-
-
     //4. Make div have a number eqaul to its postion on page only displayed when hovered over
         // addEventLister for hover(does that exist?)no mouseover
         // create p
@@ -88,10 +64,61 @@ document.addEventListener("DOMContentLoaded", function () {
             //style in css
         //add event listener (mouse out)
         // remove the p
-
-
- //5. make the squares change colors when clicked
+         //5. make the squares change colors when clicked
        //create a style in css the same as original div except for random color change
        //add event listener click
        // change class of div to new colored div
+
+var squareCounter = 0;
+function randomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+document.addEventListener("DOMContentLoaded", function () {
+    var squareButton = document.createElement('button');
+    squareButton.innerText = "Add Square";
+    squareButton.id = "square-button"
+    var squareButtonContainer = document.createElement('div');
+    squareButtonContainer.appendChild(squareButton);
+    document.body.appendChild(squareButtonContainer);
+    squareButton = document.getElementById("square-button");
+    squareButton.addEventListener("click", function () {
+        squareCounter++;
+        var newSquare = document.createElement('div');
+        newSquare.className = "squares";
+        squareNumber = document.createElement("h3");
+        squareNumber.innerText = squareCounter;
+        document.body.appendChild(newSquare);
+        newSquare.id = squareCounter;
+        newSquare.appendChild(squareNumber);
+        newSquare.addEventListener("click", function(){
+            newSquare.style.background= randomColor()
+        })
+        newSquare.addEventListener("mouseout",function(event){
+            event.target.style.color="transparent"
+        })
+        newSquare.addEventListener("mouseover", function(event){
+           event.target.style.color="white";
+        })
+        newSquare.addEventListener("dblclick", function(){
+            
+
+        })
+
+
+    })
+
+    
+  
+})
+
+
+
+
+
+
 //6. make the even squares delete the square in
