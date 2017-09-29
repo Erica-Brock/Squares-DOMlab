@@ -40,7 +40,7 @@
     document.addEventListener("DOMContentLoaded", function(){
         var SquareButton= document.createElement('button');
         SquareButton.innerText="Add Square";
-        SquareButton.id="square=button"
+        SquareButton.id="square-button"
         var SquareButtonContainer= document.createElement('div');
         SquareButtonContainer.appendChild(SquareButton);
         document.body.appendChild(SquareButtonContainer);
