@@ -50,7 +50,12 @@
         document.body.appendChild(SquareButtonContainer);
         SquareButton=document.getElementById("square-button");
         SquareButton.addEventListener("click", function(){
-            console.log("working");
+            var NewButton=document.createElement('button');
+            NewButton.className="new-button";
+            var NewSquare=document.createElement('div');
+            NewSquare.className="squares";
+            NewButton.appendChild(NewSquare);
+            document.body.appendChild(NewButton);
         })
     })
 
